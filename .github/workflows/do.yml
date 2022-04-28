@@ -21,7 +21,7 @@ jobs:
           FROM_IMAGE=${{ github.event.release.name }}
           TO_IMAGE=`echo $FROM_IMAGE|sed 's/\//_/g'`
           echo "FROM_IMAGE=$FROM_IMAGE" >> $GITHUB_ENV
-          echo "TO_IMAGE=$TO_IMAGE" >> $GITHUB_ENV
+          echo "TO_IMAGE=pescox/$TO_IMAGE" >> $GITHUB_ENV
       
       - name: Build and push
         id: docker_build

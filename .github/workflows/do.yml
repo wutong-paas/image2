@@ -21,6 +21,7 @@ jobs:
           
       - name: Set ENV
         run: |
+          echo "Name: ${{ github.event.release.name }} Description: ${{ github.event.release.body }}"
           echo "FROM_IMAGE=${RELEASE#refs/tags/}" >> $GITHUB_ENV
           echo "TO_IMAGE=`echo $FROM_IMAGE|sed 's/\//_/g'`" >> $GITHUB_ENV
       

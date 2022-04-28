@@ -18,8 +18,9 @@ jobs:
           
       - name: Set ENV
         run: |
-          echo "FROM_IMAGE=${{ github.event.release.name }}" >> $GITHUB_ENV
+          FROM_IMAGE=${{ github.event.release.name }}
           TO_IMAGE=`echo $FROM_IMAGE|sed 's/\//_/g'`
+          echo "FROM_IMAGE=$FROM_IMAGE" >> $GITHUB_ENV
           echo "TO_IMAGE=$TO_IMAGE" >> $GITHUB_ENV
       
       - name: Build and push

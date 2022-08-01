@@ -1,4 +1,4 @@
-# image-ops
+# image2
 通过github action将国内无法访问的镜像转到dockerhub。
 ## 镜像转换
 国内不可访问镜像通过github action转换。

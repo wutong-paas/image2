@@ -1,8 +1,8 @@
 # image2
-通过github action将国内无法访问的镜像转到dockerhub。
+Dcoker镜像工具：国外镜像转换；编译Dockerfile
 ## 镜像转换
-国内不可访问镜像通过github action转换。
 
+国内不可访问镜像通过 GitHub Action 转换。
 我需要做的是：
 1. 创建 release；
 2. 填写一个新的 Tag 号，例如 `iodp-v0.0.1`；（Tag 号没有明确意义，只为创建 release 触发 GitHub Action）
@@ -11,6 +11,7 @@
 - 最后编译出来的镜像地址是 `iodp/k8s.gcr.io_kube-apiserver:v1.24.0` 和 `registry.cn-zhangzhou.aliyuncs.com/iodp/k8s.gcr.io_kube-apiserver:v1.24.0`；
 - 你可能注意到了，对了，转换处理会将原镜像的 `/` 全部替换成 `_`。
 ## 编译镜像
+编写本仓库下的 `Dockerfile`，提交之后使用 GitHub Action 编译镜像。
 我需要做的是：
 1. 修改仓库的Dockerfile文件，写入新的内容；
 2. 提交，提交信息为编译的镜像名称。（提交信息为编译的镜像名称，切记！）

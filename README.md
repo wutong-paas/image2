@@ -12,5 +12,5 @@
 1. 修改仓库的Dockerfile文件，写入新的内容；
 2. 提交，提交信息为编译的镜像名称即可。
 须知：
-- 如果提交信息为`alpine`，那么最后编译出来的镜像地址是`iodp/alpine`；
+- 如果提交信息为`alpine`，那么最后编译出来的镜像地址是`iodp/alpine` 和 `registry.cn-zhangzhou.aliyuncs.com/iodp/alpine`；
 - 提交信息可以附带tag，例如：`alpine:latest`

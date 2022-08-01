@@ -19,9 +19,10 @@ jobs:
       - name: Set ENV
         run: |
           FROM_IMAGE=${{ github.event.release.name }}
+          DOCKERHUB_USER=${{ secrets.DOCKERHUB_USER }}
           TO_IMAGE=`echo $FROM_IMAGE|sed 's/\//_/g'`
           echo "FROM_IMAGE=$FROM_IMAGE" >> $GITHUB_ENV
-          echo "TO_IMAGE=dpcr/$TO_IMAGE" >> $GITHUB_ENV
+          echo "TO_IMAGE=$DOCKERHUB_USER/$TO_IMAGE" >> $GITHUB_ENV
       
       - name: Build and push
         id: docker_build

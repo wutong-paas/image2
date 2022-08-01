@@ -32,4 +32,4 @@ jobs:
         with:
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: dpcr/${{ github.event.head_commit.message }}
+          tags: ${{ secrets.DOCKERHUB_USER }}/${{ github.event.head_commit.message }}

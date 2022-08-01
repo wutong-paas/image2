@@ -7,6 +7,9 @@
 1. 创建 release；
 2. 填写一个新的 Tag 号，例如 `iodp-v0.0.1`；（Tag 号没有明确意义，只为创建 release 触发 GitHub Action）
 3. 填写完整的外网镜像名称， 例如 `k8s.gcr.io/kube-apiserver:v1.24.0`。
+须知：
+- 最后编译出来的镜像地址是 `iodp/k8s.gcr.io_kube-apiserver:v1.24.0` 和 `registry.cn-zhangzhou.aliyuncs.com/iodp/k8s.gcr.io_kube-apiserver:v1.24.0`；
+- 你可能注意到了，对了，转换处理会将原镜像的 `/` 全部替换成 `_`。
 ## 编译镜像
 我需要做的是：
 1. 修改仓库的Dockerfile文件，写入新的内容；

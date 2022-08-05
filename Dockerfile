@@ -1,4 +1,2 @@
-FROM alpine:latest
-RUN apk --update add ca-certificates \
-                     mailcap \
-                     curl
+FROM mysql:8.0.27
+RUN apt-get update && apt-get install -y procps && rm -rf /var/lib/apt/lists/*

@@ -1,4 +1,4 @@
-name: do
+name: release
 
 on:
   release:

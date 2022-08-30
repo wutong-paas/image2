@@ -39,12 +39,12 @@ jobs:
         uses: docker/setup-buildx-action@v1
 
       - name: Generate dockerfile.tmp
-        run: echo "FROM $FROM_IMAGE" > Dockerfile.tmp
+        run: echo "FROM $FROM_IMAGE" > /tmp/Dockerfile
 
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
           platforms: linux/amd64,linux/arm64
-          file: Dockerfile.tmp
+          file: /tmp/Dockerfile
           push: true
           tags: ${{ env.TO_DOCKERHUB_IMAGE }},${{ env.TO_ALIYUN_REGISTRY_IMAGE }}

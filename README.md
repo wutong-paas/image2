@@ -7,9 +7,8 @@ Dcoker 镜像工具：国外镜像转换；编译 Dockerfile
 1. 创建 release；
 2. 填写一个新的 Tag 号，例如 `v0.0.1`；（Tag 号没有明确意义，只为创建 release 触发 GitHub Action）
 3. 填写完整的外网镜像名称， 例如 `k8s.gcr.io/kube-apiserver:v1.24.0`。
-须知：
-- 最后编译出来的镜像地址是 `srcio/k8s.gcr.io_kube-apiserver:v1.24.0` 和 `registry.cn-zhangzhou.aliyuncs.com/srcio/k8s.gcr.io_kube-apiserver:v1.24.0`；
-- 你可能注意到了，对了，转换处理会将原镜像的 `/` 全部替换成 `_`。
+> 须知：最后编译出来的镜像地址只会保留镜像名称，不会保留域名或命名空间。  
+> 上例转换出来的镜像是 `srcio/k8s.gcr.io_kube-apiserver:v1.24.0` 和 `registry.cn-zhangzhou.aliyuncs.com/srcio/kube-apiserver:v1.24.0`。
 ## 编译镜像
 编写本仓库下的 `Dockerfile`，提交之后使用 GitHub Action 编译镜像。
 我需要做的是：

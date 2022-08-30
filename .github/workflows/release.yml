@@ -26,7 +26,8 @@ jobs:
       - name: Set ENV
         run: |
           FROM_IMAGE=${{ github.event.release.name }}
-          IMAGE_NAME=`echo $FROM_IMAGE|sed 's/\//_/g'`
+          # IMAGE_NAME=`echo $FROM_IMAGE|sed 's/\//_/g'`
+          IMAGE_NAME=`basename $FROM_IMAGE`
           echo "FROM_IMAGE=$FROM_IMAGE" >> $GITHUB_ENV
           echo "TO_DOCKERHUB_IMAGE=${{ secrets.DOCKERHUB_USER }}/$IMAGE_NAME" >> $GITHUB_ENV
           echo "TO_ALIYUN_REGISTRY_IMAGE=${{ secrets.ALIYUN_REGISTRY_SERVER }}/${{ secrets.ALIYUN_REGISTRY_NAMESPACE }}/$IMAGE_NAME" >> $GITHUB_ENV

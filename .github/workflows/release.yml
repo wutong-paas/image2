@@ -40,7 +40,7 @@ jobs:
 
       - name: Generate dockerfile.tmp
         run: |
-          ls
+          pwd
           echo "FROM $FROM_IMAGE" > Dockerfile.tmp
           ls
 

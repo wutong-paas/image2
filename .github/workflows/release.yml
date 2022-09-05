@@ -13,15 +13,15 @@ jobs:
       - name: Login to DockerHub
         uses: docker/login-action@v1
         with:
-          username: ${{ secrets.DOCKERHUB_USER }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Login to Aliyun Registry
         uses: docker/login-action@v1
         with:
-          registry: ${{ secrets.ALIYUN_REGISTRY_SERVER }}
-          username: ${{ secrets.ALIYUN_REGISTRY_USER }}
-          password: ${{ secrets.ALIYUN_REGISTRY_TOKEN }}
+          registry: ${{ secrets.DOMESTIC_DOCKER_SERVER }}
+          username: ${{ secrets.DOMESTIC_DOCKER_USERNAME }}
+          password: ${{ secrets.DOMESTIC_DOCKER_PASSWORD }}
 
       - name: Set ENV
         run: |
@@ -29,8 +29,8 @@ jobs:
           # IMAGE_NAME=`echo $FROM_IMAGE|sed 's/\//_/g'`
           IMAGE_NAME=`basename $FROM_IMAGE`
           echo "FROM_IMAGE=$FROM_IMAGE" >> $GITHUB_ENV
-          echo "TO_DOCKERHUB_IMAGE=${{ secrets.DOCKERHUB_USER }}/$IMAGE_NAME" >> $GITHUB_ENV
-          echo "TO_ALIYUN_REGISTRY_IMAGE=${{ secrets.ALIYUN_REGISTRY_SERVER }}/${{ secrets.ALIYUN_REGISTRY_NAMESPACE }}/$IMAGE_NAME" >> $GITHUB_ENV
+          echo "TO_DOCKERHUB_IMAGE=${{ secrets.DOCKER_USERNAME }}/$IMAGE_NAME" >> $GITHUB_ENV
+          echo "TO_ALIYUN_REGISTRY_IMAGE=${{ secrets.DOMESTIC_DOCKER_SERVER }}/${{ secrets.ALIYUN_REGISTRY_NAMESPACE }}/$IMAGE_NAME" >> $GITHUB_ENV
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1

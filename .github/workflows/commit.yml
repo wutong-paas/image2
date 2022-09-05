@@ -16,7 +16,7 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Login to Aliyun Registry
+      - name: Login to Huaweiyun Registry
         uses: docker/login-action@v1
         with:
           registry: ${{ secrets.DOMESTIC_DOCKER_SERVER }}
@@ -43,4 +43,4 @@ jobs:
           push: true
           tags: |
             ${{ secrets.DOCKER_USERNAME }}/${{ github.event.head_commit.message }}
-            ${{ secrets.DOMESTIC_DOCKER_SERVER }}/${{ secrets.ALIYUN_REGISTRY_NAMESPACE }}/${{ github.event.head_commit.message }}
+            ${{ secrets.DOMESTIC_DOCKER_SERVER }}/wutong/${{ github.event.head_commit.message }}

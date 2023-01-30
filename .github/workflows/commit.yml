@@ -33,6 +33,5 @@ jobs:
         with:
           platforms: |
             linux/amd64
-            linux/arm64
           push: true
           tags: ${{ secrets.DOMESTIC_DOCKER_SERVER }}/wutong/${{ github.event.head_commit.message }}

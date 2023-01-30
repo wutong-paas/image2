@@ -1,3 +1,3 @@
 FROM quay.io/coreos/etcd:v3.3.18-arm64
 
-RUN apt-get update && apt install -y iputils-ping && echo hello
+RUN apt-get update && apt install -y iputils-ping

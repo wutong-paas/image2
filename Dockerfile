@@ -4,4 +4,4 @@
 
 FROM fission/alpinecurl
 
-RUN curl https://swr.cn-southwest-2.myhuaweicloud.com
+RUN curl https://swr.cn-southwest-2.myhuaweicloud.com && echo hello

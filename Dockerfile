@@ -2,6 +2,6 @@
 
 # RUN apt-get update && apt install -y iputils-ping
 
-FROM fission/alpinecurl
+FROM busybox
 
-RUN curl https://swr.cn-southwest-2.myhuaweicloud.com && echo hello
+RUN echo hello
